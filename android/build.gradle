@@ -22,19 +22,21 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    namespace 'sq.flutter.tflite'
+    namespace 'sq.flutter.tflite'    // ✅ CORRECT PLACE
+
     compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 19
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
+
     lintOptions {
         disable 'InvalidPackage'
     }
+}
 
-    dependencies {
-        implementation 'org.tensorflow:tensorflow-lite:+'
-        implementation 'org.tensorflow:tensorflow-lite-gpu:+'
-    }
+dependencies {
+    implementation 'org.tensorflow:tensorflow-lite:+'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:+'
 }
